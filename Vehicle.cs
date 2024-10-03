@@ -28,11 +28,11 @@ namespace Cars
 
         public string toString()
         {
-            return "Licence Plate: " + licencePlate + " | Weight : " + weight.ToString();
+            return "Licence Plate: " + this.licencePlate + " | Weight : " + this.weight.ToString();
         }
         public bool Equals(Vehicle Other)
         {     
-            return (licencePlate == Other.getLicencePlate() && weight == Other.getWeight()) ? true : false;
+            return licencePlate == Other.getLicencePlate() && weight == Other.getWeight();
         }
 
 
