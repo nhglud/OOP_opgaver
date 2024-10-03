@@ -24,6 +24,22 @@ namespace Cars
 
         public void AddVehicle(Vehicle vehicle)
         {
+            if( this.weight + vehicle.getWeight() > this.maxWeight)
+            {
+                Console.WriteLine("WARNING: Car ferry " + this.name + " cannot carry more cars.");
+                return;
+            }
+
+            if (this.weight + vehicle.getWeight() > this.maxWeight * 0.9 && this.weight + vehicle.getWeight() != this.maxWeight)
+            {
+                Console.WriteLine("WARNING: Car ferry " + this.name + " is nearly full.");
+            }
+
+            if (this.weight + vehicle.getWeight() == this.maxWeight)
+            {
+                Console.WriteLine("WARNING: Car ferry " + this.name + " is at max capacity.");
+            }            
+
             this.vehicles.Add(vehicle);
             this.weight += vehicle.getWeight();
         }
